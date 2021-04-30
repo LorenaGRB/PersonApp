@@ -1,16 +1,18 @@
-import React, { useState, useContext, useEffect, useCallback, useMemo } from 'react';
+import React from 'react';
 import Card from '../UI/Card'
 import classes from './UsersList.module.css'
 
 const UsersList = (props) => {
-
+    console.log(props.users)
     return (
         <Card className={classes.Users}>
             <ul>
                 {props.users.map( user => {
-                    <li>
-                        {user.name} ({user.age} tears old)
-                    </li>
+                    return(
+                        <li key={user.id} >
+                        {user.name} ({user.age} Years old)
+                        </li>
+                    )
                 })}
             </ul>
         </Card>
